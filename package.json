@@ -1,0 +1,34 @@
+{
+  "name": "reactseries",
+  "version": "1.0.0",
+  "description": "Creating a Food ordering application using React, JavaScript",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gowthami-sukhavasi/Food-ordering.git"
+  },
+  "keywords": [
+    "React",
+    "JavaScript"
+  ],
+  "author": "Gowthami S",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gowthami-sukhavasi/Food-ordering/issues"
+  },
+  "homepage": "https://github.com/gowthami-sukhavasi/Food-ordering#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "browsersList": [
+    "last 2 Chrome versions",
+    "last 2 Firefox versions"
+  ]
+}
