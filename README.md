@@ -1,5 +1,8 @@
 # Food ordering App
 
+To start the project:
+npm start
+
 
 # Parcel
 - Dev Build
