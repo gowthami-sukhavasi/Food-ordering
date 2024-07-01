@@ -1,47 +1,79 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import resList from "./data.json";
 
-/* JSX => Babel transpiles to React.createElement 
-                     => React Element (JS object) => HTML element (render)
-*/
-
-/* React Element (Not JSX) */
-const reactElem = React.createElement("h1", {}, "React element 🦚");
-
-// JSX
-const jsxHeading = <h1 className="heading">JSX element 🦋 </h1>;
-
-const jsxHeading2 = (
-  <div className="heading">
-    {reactElem}
-    {jsxHeading}
-    {25 + 3534535}
-    <h2>JSX heading 🔸 </h2>
-    <div className="title">
-      <h1>I am h1</h1>
-      <h2>I am h2</h2>
-      <h3>I am h3</h3>
+const Header = () => {
+  return (
+    <div className="header-container">
+      <img
+        alt="logo"
+        className="logo"
+        src="https://images.vexels.com/media/users/3/301337/isolated/preview/971184588d50c01840d2e88c620ed4fb-food-goddess-international.png"
+      />
+      <div className="nav-items">
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Contact</li>
+          <li>Cart</li>
+        </ul>
+      </div>
+      <img
+        alt="restaurant-logo"
+        src="https://cdn-icons-png.flaticon.com/256/6997/6997662.png"
+        height="80px"
+        width="80px"
+      />
     </div>
-  </div>
-);
-
-//Functional Component
-
-const FuncComponent = () => <h1>One line Func component 🎒</h1>;
-
-const FuncComponent2 = () => {
-  return <h1>Func component with a return</h1>;
+  );
 };
 
-const FuncComponent3 = () => (
-  <div>
-    {jsxHeading2}
-    <FuncComponent />
-    <FuncComponent2></FuncComponent2>
-    <h1 className="heading">Multi-line Func component 🍀</h1>
-  </div>
-);
+const RestaurantCard = ({ resData }) => {
+  console.log(resData);
+  const { cloudinaryImageId, name, cuisines, avgRating, costForTwo } =
+    resData?.info;
+
+  return (
+    <div className="restaurant-card">
+      <img
+        className="restaurant-logo"
+        src={
+          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
+          cloudinaryImageId
+        }
+        alt="restaurant-logo"
+      />
+      <h3>{name} </h3>
+      <h4>{cuisines.join(", ")}</h4>
+      <h4>{avgRating}</h4>
+      <h4>{costForTwo}</h4>
+    </div>
+  );
+};
+
+const Body = () => {
+  console.log(resList);
+  return (
+    <div className="body-container">
+      <input className="search-bar" type="search" placeholder="Search here" />
+      <div className="restaurant-container">
+        {resList.map((restaurant) => (
+          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const App = () => {
+  return (
+    <div className="App">
+      <Header />
+      <Body />
+    </div>
+  );
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<FuncComponent3 />);
+root.render(<App />);
