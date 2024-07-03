@@ -28,20 +28,33 @@ body {
     margin: 10px;
 }
 
-/* Body Styles */
-
-.search-bar {
-    width: 30%;
-    height: 35px;
-    border-radius: 20px;
-    padding: 10px;
-    border: 1px solid blue;
-    margin: 20px;
+.login-btn {
+    padding: 20px;
+    cursor: pointer;
 }
 
-.search-bar::placeholder {
-    font-family: 'Playwrite ES Deco';
-    font-weight: bold;
+/* Shimmer */
+.shimmer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+
+.shimmer-card {
+    width: 380px;
+    height: 500px;
+    background-color: lightgray;
+    border: 1px solid black;
+    margin: 5px;
+    padding: 5px;
+}
+
+/* Body Styles */
+
+.filter {
+    display: flex;
+    margin: 10px;
 }
 
 .filter-btn {
